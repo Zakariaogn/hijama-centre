@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أم جويرية للعناية الجسدية | الطب البديل والاستشفاء الطبيعي</title>
+    <!-- استيراد خط القاهرة الرسمي للمواقع الفاخرة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* نظام الألوان المستوحى بدقة من لغة تصميم الـ Wellness الفاخرة */
+        :root {
+            --primary-dark: #14532d;    /* الأخضر الملكي العميق */
+            --primary-brand: #166534;   /* الأخضر العشبي الحيوي */
+            --accent-gold: #b45309;     /* التوباز الذهبي للتنبيهات والعناوين الفرعية */
+            --bg-cream: #fafaf9;        /* خلفية مريحة جداً للعين */
+            --card-white: #ffffff;      /* أبيض ناصع للبطاقات المعزولة */
+            --mint-light: #f0fdf4;      /* لمسة النعناع المهدئة للخلفيات العريضة */
+            --text-dark: #1f2937;       /* الفحمي الفاخر للنصوص الأساسية */
+            --text-gray: #4b5563;       /* الرمادي المعتدل للنصوص الفرعية */
+            --font-cairo: 'Cairo', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-cairo);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* الهيدر وشريط التنقل المتجاوب */
+        header {
+            background-color: var(--card-white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(20, 83, 45, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+            font-weight: 400;
+            font-size: 0.95rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-brand);
+        }
+
+        /* قسم الهيرو (الواجهة الترحيبية الأولى) */
+        .hero-section {
+            background: linear-gradient(135deg, var(--mint-light) 0%, #ffffff 100%);
+            padding: 90px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(20, 83, 45, 0.08);
+        }
+
+        .hero-badge {
+            background-color: var(--mint-light);
+            color: var(--primary-brand);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 25px;
+            border: 1px solid rgba(22, 101, 52, 0.15);
+        }
+
+        .hero-section h1 {
+            font-size: 2.6rem;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-section p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+        }
+
+        .cta-button {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 14px rgba(20, 83, 45, 0.15);
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-brand);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(20, 83, 45, 0.2);
+        }
+
+        /* الهيكل الإنشائي للأقسام */
+        section {
+            max-width: 1200px;
+            margin: 70px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.9rem;
+            color: var(--primary-dark);
+            margin-bottom: 45px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 12px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* قسم من نحن / الرؤية */
+        .about-card {
+            background-color: var(--card-white);
+            border-radius: 16px;
+            padding: 45px 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.015);
+            border: 1px solid #ebeeeb;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .about-card p {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* شبكة الخدمات (علاجات الحجامة والتدليك المعتمدة) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-white);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.015);
+            border: 1px solid #ebeeeb;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-brand);
+            box-shadow: 0 12px 30px rgba(20, 83, 45, 0.04);
+        }
+
+        .service-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* تصنيف الحالات المستهدفة (الأفضل لـ) */
+        .target-box {
+            background-color: var(--mint-light);
+            padding: 18px;
+            border-radius: 10px;
+            border-right: 4px solid var(--primary-brand);
+        }
+
+        .target-box h4 {
+            color: var(--primary-brand);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .target-box ul {
+            list-style: none;
+        }
+
+        .target-box ul li {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            position: relative;
+            padding-right: 15px;
+        }
+
+        .target-box ul li::before {
+            content: "•";
+            color: var(--accent-gold);
+            position: absolute;
+            right: 0;
+            font-weight: bold;
+        }
+
+        /* قسم الجودة والخصوصية */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--card-white);
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #ebeeeb;
+            border-top: 4px solid var(--primary-dark);
+            font-weight: 600;
+            color: var(--primary-dark);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+        }
+
+        /* قسم الحجز والتواصل */
+        .booking-panel {
+            background-color: var(--mint-light);
+            border-radius: 16px;
+            padding: 50px 30px;
+            text-align: center;
+            border: 1px solid rgba(20, 83, 45, 0.08);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .booking-panel p {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .action-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-call {
+            background-color: var(--primary-dark);
+            color: white;
+            box-shadow: 0 4px 12px rgba(20, 83, 45, 0.15);
+        }
+
+        .btn-fb-page {
+            background-color: #1877f2;
+            color: white;
+            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.2);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        .disclaimer-text {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-top: 30px;
+            font-style: italic;
+            border-top: 1px dashed rgba(20, 83, 45, 0.15);
+            padding-top: 15px;
+        }
+
+        /* الفوتر السفلي */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 90px;
+            font-size: 0.9rem;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        /* التوافق التام مع الأجهزة المحمولة */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; 
+            }
+            .hero-section {
+                padding: 60px 20px;
+            }
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .about-card {
+                padding: 30px 20px;
+            }
+            section {
+                margin: 45px auto;
+            }
+            .action-links {
+                flex-direction: column;
+                width: 100%;
+            }
+            .action-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط القائمة العلوية -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">أم جويرية <span>العناية الجسدية</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">رؤيتنا</a></li>
+                <li><a href="#services">خدماتنا تبعا للسنة</a></li>
+                <li><a href="#features">معاييرنا</a></li>
+                <li><a href="#contact">حجز موعد</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- الواجهة الرئيسية (Hero Section) -->
+    <section class="hero-section">
+        <div class="hero-badge">عناية شمولية وطبيعية موثوقة لحيوية جسدك</div>
+        <h1>أم جويرية للعناية الجسدية</h1>
+        <p>ملاذكم المتكامل لاستعادة التوازن الداخلي، التخلص من السموم، وتخفيف الآلام العضلية والمزمنة بأساليب طبيعية آمنة ومتوافقة تماماً مع أصول الرعاية والاستشفاء النبوي والتقليدي.</p>
+        <a href="#contact" class="cta-button">تواصلِ معنا واحجزِ موعداً</a>
+    </section>
+
+    <!-- من نحن -->
+    <section id="about">
+        <h2 class="section-title">عن الخدمة ورؤيتنا تبعا للسنة</h2>
+        <div class="about-card">
+            <p>نهدف في صفحة "أم جويرية للعناية الجسدية" إلى تقديم أرقى مستويات الراحة الجسدية والاستشفاء من خلال جلسات متخصصة ومصممة بعناية لتنشيط الدورة الدموية، طرد الدم الراكد والسموم، وتخفيف آلام الظهر والمفاصل الناتجة عن تعب الحياة اليومية والإجهاد.</p>
+            <p style="font-size: 0.95rem; color: var(--text-gray);">نعتمد على آليات دقيقة ترتكز على مبادئ النظافة، الخصوصية التامة، والتعامل المهني المريح لضمان تلبية تطلعاتكم الاستشفائية بنجاح.</p>
+        </div>
+    </section>
+
+    <!-- دليل الخدمات والعلاجات -->
+    <section id="services">
+        <h2 class="section-title">جلساتنا وعلاجاتنا الطبيعية</h2>
+        <div class="services-grid">
+            
+            <!-- الحجامة الرطبة -->
+            <div class="service-card">
+                <div>
+                    <h3>الحجامة الرطبة (إزالة السموم العلاجية)</h3>
+                    <p>عملية تطهير وتنقية عميقة للجسم تعتمد على سحب السموم والدم الراكد عبر خدوش سطحية خفيفة جداً ولطيفة على الجلد، مما يحفز جهاز المناعة بشكل فوري.</p>
+                </div>
+                <div class="target-box">
+                    <h4>الأفضل لـ:</h4>
+                    <ul>
+                        <li>الآلام المزمنة بالرقبة، الظهر، والمفاصل</li>
+                        <li>علاج نوبات الصداع الكلي والنصفي الشديد</li>
+                        <li>تنقية وتصفية الدم ودعم النشاط العام</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- الحجامة الجافة -->
+            <div class="service-card">
+                <div>
+                    <h3>الحجامة الجافة (العلاج بالشفط اللطيف)</h3>
+                    <p>تعتمد على تطبيق كؤوس الشفط المخصصة على مناطق التوتر دون إحداث أي جروح أو دم، لتعمل كأداة قوية لسحب الضغط الداخلي وتحفيز تدفق المسارات.</p>
+                </div>
+                <div class="target-box">
+                    <h4>الأفضل لـ:</h4>
+                    <ul>
+                        <li>تخفيف تشنجات العضلات والظهر المتعبة</li>
+                        <li>تقليل مستويات التوتر، الإجهاد والضغط النفسي</li>
+                        <li>تحسين تدفق الدورة اللمفاوية وتنشيط الخلايا</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- الحجامة التدليكية -->
+            <div class="service-card">
+                <div>
+                    <h3>الحجامة التدليكية (المساج بالزيوت)</h3>
+                    <p>تجربة استرخائية عميقة ومريحة تدمج بين فوائد الشفط الجاف وحركات التدليك الانسيابية، حيث يتم تحريك الكؤوس برفق على الجسم لفك العقد العضلية.</p>
+                </div>
+                <div class="target-box">
+                    <h4>الأفضل لـ:</h4>
+                    <ul>
+                        <li>إزالة التصلب العضلي التام وتشنج الأكتاف</li>
+                        <li>الاسترخاء العميق وتحسين نوعية وجودة النوم</li>
+                        <li>تنشيط الخلايا السطحية وتحفيز الأنسجة</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ميزات وخصائص الجودة -->
+    <section id="features">
+        <h2 class="section-title">معايير الراحة والأمان لدينا</h2>
+        <div class="features-grid">
+            <div class="feature-card">معايير تعقيم ونظافة متميزة وصارمة</div>
+            <div class="feature-card">استخدام أدوات وحقائب معقمة لمرة واحدة</div>
+            <div class="feature-card">خصوصية تامة وبيئة هادئة ومريحة</div>
+            <div class="feature-card">خطط وجلسات مخصصة ومراعية لكل حالة</div>
+        </div>
+    </section>
+
+    <!-- لوحة الاتصال والحجز -->
+    <section id="contact">
+        <div class="booking-panel">
+            <h2 class="section-title" style="margin-bottom: 20px;">جاهزة لبدء رحلة الاستشفاء؟</h2>
+            <p>تفضلي بالتواصل معنا مباشرة عبر الوسائل التالية، وسنقوم بالرد عليكِ لتأكيد الموعد المناسب لجلستكِ القادمة.</p>
+            
+            <div class="action-links">
+                <!-- رابط الواتساب المباشر بالرقم الجزائري المكتوب دون الصفر الأول ومع رمز الدولة 213 -->
+                <a href="https://wa.me/213664485679" target="_blank" class="action-btn btn-whatsapp">📱 مراسلة عبر الواتساب</a>
+                
+                <!-- زر الاتصال الهاتفي المباشر للهواتف -->
+                <a href="tel:0664485679" class="action-btn btn-call">📞 اتصال هاتفي مباشر</a>
+                
+                <!-- رابط صفحة فيسبوك الرسمية -->
+                <a href="https://www.facebook.com/profile.php?id=61583344275163" target="_blank" class="action-btn btn-fb-page">🌐 صفحتنا على فيسبوك</a>
+            </div>
+
+            <!-- إخلاء المسؤولية الطبي الضروري مهنياً -->
+            <p class="disclaimer-text">تنطوي الجلسات المقدمة تحت بند الرعاية والعناية الجسدية التكميلية والاستشفاء الطبيعي التقليدي، ولا تعد بديلاً عن الفحوصات أو الاستشارات الطبية التخصصية عند الأطباء للنزلاء الذين يعانون من أمراض مستعصية حادة.</p>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 لـ <span>أم جويرية للعناية الجسدية</span> - استشفاء طبيعي ورعاية شمولية دافئة</p>
+    </footer>
+
+</body>
+</html>
